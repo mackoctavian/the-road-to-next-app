@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Heading from "@/components/heading";
 
 const TICKET_ICONS = {
   OPEN: <FileText />,
@@ -22,14 +23,7 @@ const TICKET_ICONS = {
 export default function TicketsPage() {
   return (
     <main className="flex flex-1 flex-col items-center gap-y-8">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Tickets Page</h2>
-        <p className="text-sm text-muted-foreground">
-          All your tickets in one place
-        </p>
-      </div>
-
-      <Separator />
+      <Heading title="Tickets" description="All your tickets in one place" />
 
       <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-in-from-top">
         {initialTickets.map((ticket) => (
