@@ -6,6 +6,7 @@ import { ticketsPath, homePath } from "@/path";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Kanban } from "lucide-react";
 import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <main className=" min-h-screen flex-1 overflow-y-auto overflow-x-hidden bg-secondary/20 flex flex-col py-24 px-8">
-          {children}
-        </main>
+        <ThemeProvider>
+          <Header />
+          <main className=" min-h-screen flex-1 overflow-y-auto overflow-x-hidden bg-secondary/20 flex flex-col py-24 px-8">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

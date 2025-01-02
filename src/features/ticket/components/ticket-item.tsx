@@ -42,7 +42,11 @@ export default function TicketItem({ ticket, isDetail }: TicketItemProps) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="line-clamp-3 whitespace-break-spaces">
+          <p
+            className={clsx(" whitespace-break-spaces", {
+              "line-clamp-3": !isDetail,
+            })}
+          >
             {ticket.content}
           </p>
         </CardContent>
