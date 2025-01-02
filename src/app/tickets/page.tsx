@@ -1,3 +1,4 @@
+import Spinner from "@/components/spinner";
 import { initialTickets } from "../../data";
 
 import Heading from "@/components/heading";
@@ -11,7 +12,7 @@ export default function TicketsPage() {
     <main className="flex flex-1 flex-col items-center gap-y-8">
       <Heading title="Tickets" description="All your tickets in one place" />
 
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<Spinner />}>
         <TicketList />
       </Suspense>
     </main>
