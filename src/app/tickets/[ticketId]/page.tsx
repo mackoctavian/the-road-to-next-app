@@ -13,7 +13,7 @@ type TicketPageParams = {
 
 export default async function TicketPage({ params }: TicketPageParams) {
   const { ticketId } = await params;
-  const ticket = await getTicket(parseInt(ticketId));
+  const ticket = await getTicket(ticketId);
 
   if (!ticket) {
     return (
